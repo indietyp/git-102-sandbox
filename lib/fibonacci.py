@@ -20,10 +20,17 @@ def iterative_fibonacci(n):
     previous = 1
     result = 1
 
-    for _ in range(2, n):
+    for _ in range(1, n):
         previous, result = result, result + previous
 
     return result
+
+
+def recursive_fibonacci(n):
+    if n < 2:
+        return n
+    else:
+        return recursive_fibonacci(n - 1) + recursive_fibonacci(n - 2)
 
 
 class TestFibonacci(unittest.TestCase):
@@ -71,6 +78,10 @@ class TestFibonacci(unittest.TestCase):
     def test_iterative(self):
         for n, expected in enumerate(self.EXPECTED, start=1):
             self.assertEqual(iterative_fibonacci(n), expected)
+
+    def test_recursive(self):
+        for n, expected in enumerate(self.EXPECTED, start=1):
+            self.assertEqual(recursive_fibonacci(n), expected)
 
 
 if __name__ == "__main__":
