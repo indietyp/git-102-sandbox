@@ -13,6 +13,19 @@ def analytic_fibonacci(n):
     return int((p**n + q**n) / sqrt_5 + 0.5)
 
 
+def iterative_fibonacci(n):
+    if n < 2:
+        return n
+
+    previous = 1
+    result = 1
+
+    for _ in range(2, n):
+        previous, result = result, result + previous
+
+    return result
+
+
 class TestFibonacci(unittest.TestCase):
     """
     Test suite for all implementations of fibonacci
@@ -54,6 +67,10 @@ class TestFibonacci(unittest.TestCase):
     def test_analytic(self):
         for n, expected in enumerate(self.EXPECTED, start=1):
             self.assertEqual(analytic_fibonacci(n), expected)
+
+    def test_iterative(self):
+        for n, expected in enumerate(self.EXPECTED, start=1):
+            self.assertEqual(iterative_fibonacci(n), expected)
 
 
 if __name__ == "__main__":
