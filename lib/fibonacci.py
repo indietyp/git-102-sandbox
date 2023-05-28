@@ -33,6 +33,16 @@ def recursive_fibonacci(n):
         return recursive_fibonacci(n - 1) + recursive_fibonacci(n - 2)
 
 
+def recursive_fast_fibonacci(n):
+    def fib(previous_previous, previous, c):
+        if c < 1:
+            return previous_previous
+        else:
+            return fib(previous, previous_previous + previous, c - 1)
+
+    return fib(0, 1, n)
+
+
 class TestFibonacci(unittest.TestCase):
     """
     Test suite for all implementations of fibonacci
@@ -82,6 +92,10 @@ class TestFibonacci(unittest.TestCase):
     def test_recursive(self):
         for n, expected in enumerate(self.EXPECTED, start=1):
             self.assertEqual(recursive_fibonacci(n), expected)
+
+    def test_recursive_fast(self):
+        for n, expected in enumerate(self.EXPECTED, start=1):
+            self.assertEqual(recursive_fast_fibonacci(n), expected)
 
 
 if __name__ == "__main__":
