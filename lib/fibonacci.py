@@ -43,6 +43,13 @@ def recursive_fast_fibonacci(n):
     return fib(0, 1, n)
 
 
+def generative_fibonacci(n):
+    a, b = 0, 1
+    while n > 0:
+        yield a
+        a, b, n = b, a + b, n - 1
+
+
 class TestFibonacci(unittest.TestCase):
     """
     Test suite for all implementations of fibonacci
@@ -96,6 +103,16 @@ class TestFibonacci(unittest.TestCase):
     def test_recursive_fast(self):
         for n, expected in enumerate(self.EXPECTED, start=1):
             self.assertEqual(recursive_fast_fibonacci(n), expected)
+
+    def test_generative(self):
+        # generate_fibonacci starts at `0`, while all others start at 1
+        iterator = zip(
+            generative_fibonacci(len(self.EXPECTED)),
+            [0, *self.EXPECTED],
+        )
+
+        for received, expected in iterator:
+            self.assertEqual(received, expected)
 
 
 if __name__ == "__main__":
