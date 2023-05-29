@@ -184,7 +184,10 @@ def main(screen):
         field.render(screen)
         screen.refresh()
 
-        time.sleep(0.4)
+        length = len(snake.coords)
+        multiplier = min(length - 4, 10) / 10
+        multiplier = 1.0 - multiplier
+        time.sleep(0.4 * multiplier)
 
 
 if __name__ == '__main__':
