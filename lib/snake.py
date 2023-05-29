@@ -1,5 +1,7 @@
 """
 Taken from: https://github.com/GeorgeZhukov/python-snake
+
+Licensed under [MIT](https://github.com/GeorgeZhukov/python-snake/blob/master/LICENSE)
 """
 import curses
 import sys

@@ -1,5 +1,8 @@
 """
 All credits go to: <https://rosettacode.org/wiki/Fibonacci_sequence#Python>
+
+Licenced under
+[GNU Free Documentation License](https://www.gnu.org/licenses/fdl-1.3.en.html).
 """
 import unittest
 from math import sqrt

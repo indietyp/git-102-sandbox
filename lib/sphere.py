@@ -1,5 +1,8 @@
 """
 Code taken from <https://rosettacode.org/wiki/Draw_a_sphere#Python>
+
+Licenced under
+[GNU Free Documentation License](https://www.gnu.org/licenses/fdl-1.3.en.html).
 """
 
 import math
