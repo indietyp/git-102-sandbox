@@ -1,6 +1,7 @@
 # Sandbox
 
-This sandbox is used in the Git 102 course, for several tasks, feel free to fork it and contribute examples.
+This sandbox is used in the [Git 102](https://github.com/indietyp/git-102) course, for several tasks, feel free to fork
+it and contribute examples.
 
 ## Licensing
 
